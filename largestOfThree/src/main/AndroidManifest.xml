@@ -2,11 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.scotmatson.largestofthree">
 
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:maxSdkVersion="19"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
+
         <activity
             android:name="com.scotmatson.largestofthree.SplashScreen"
             android:label="@string/app_name"
@@ -18,11 +23,21 @@
         </activity>
 
         <activity
+            android:name="com.scotmatson.largestofthree.Menu"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.scotmatson.largestofthree.MENU"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name="com.scotmatson.largestofthree.NumberInput"
             android:label="@string/title_activity_number_input"
             android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="com.scotmatson.NUMBERINPUT"/>
+                <action android:name="com.scotmatson.largestofthree.NUMBERINPUT"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
@@ -31,7 +46,7 @@
             android:name="com.scotmatson.largestofthree.NumberOutput"
             android:label="@string/title_activity_number_output" >
             <intent-filter>
-                <action android:name="com.scotmatson.NUMBEROUTPUT"/>
+                <action android:name="com.scotmatson.largestofthree.NUMBEROUTPUT"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>

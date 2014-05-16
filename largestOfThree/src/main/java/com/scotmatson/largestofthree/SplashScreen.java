@@ -29,7 +29,7 @@ public class SplashScreen extends Activity {
                     e.printStackTrace();
                 }
                 finally {
-                    Intent intent = new Intent("com.scotmatson.NUMBERINPUT");
+                    Intent intent = new Intent("com.scotmatson.largestofthree.MENU");
                     startActivity(intent);
                 }
             }

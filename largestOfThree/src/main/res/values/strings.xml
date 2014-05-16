@@ -13,4 +13,7 @@
     <string name="title_activity_number_input">NumberInput</string>
     <string name="randomize">Randomize</string>
 
+    <string name="play">Play Fragment</string>
+    <string name="scoreboard">Scoreboard Fragment</string>
+
 </resources>
