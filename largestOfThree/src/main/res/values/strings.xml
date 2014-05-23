@@ -2,19 +2,19 @@
 <resources>
 
     <string name="app_name">Largest of Three</string>
-    <string name="action_settings">Settings</string>
     <string name="title_activity_number_output">NumberOutput</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="title_activity_number_input">NumberInput</string>
     <string name="octothorpe">#</string>
     <string name="clearValues">Clear Values</string>
     <string name="playAgain">Play Again?</string>
     <string name="maxValue">Find MAX Value!</string>
     <string name="theBigReveal">The integer with the greatest MAX value is:</string>
-    <string name="title_activity_number_input">NumberInput</string>
     <string name="randomize">Randomize</string>
 
     <string name="play">Play Fragment</string>
     <string name="scoreboard">Scoreboard Fragment</string>
     <string name="submit">Submit</string>
+    <string name="leader_board"><u>Leader Board</u></string>
 
 </resources>

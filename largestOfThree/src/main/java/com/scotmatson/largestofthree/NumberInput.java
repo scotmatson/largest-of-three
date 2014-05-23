@@ -6,13 +6,12 @@ package com.scotmatson.largestofthree;
 *   Further modularize code structure to enforce 'DRY' principals
 * */
 
+import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -20,9 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class NumberInput extends ActionBarActivity implements View.OnClickListener, TextWatcher {
-
-    private static final String TAG = "NumberInput";
+public class NumberInput extends Activity implements View.OnClickListener, TextWatcher {
 
     EditText etNum01;
     EditText etNum02;

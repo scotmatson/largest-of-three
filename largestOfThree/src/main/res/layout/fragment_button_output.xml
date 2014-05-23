@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin">
+
+    <Button
+        android:id="@+id/bPlayAgain"
+        style="@style/button_input"
+        android:layout_alignParentLeft="true"
+        android:text="@string/playAgain"/>
+
+    <Button
+        android:id="@+id/bSubmit"
+        style="@style/button_input"
+        android:layout_alignParentRight="true"
+        android:text="@string/submit"/>
+
+</RelativeLayout>

@@ -2,16 +2,11 @@ package com.scotmatson.largestofthree;
 
 import java.util.Random;
 
-/**
- * Created by scot on 4/9/14.
- */
 public class NumberHelper {
 
-    private int[] threeNum = new int[3];
     private int maxNum;
 
     public NumberHelper(int[] threeNum) {
-        this.threeNum = threeNum;
         this.maxNum = calculateMax(threeNum);
     }
 

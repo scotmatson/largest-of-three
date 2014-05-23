@@ -14,23 +14,29 @@
     <LinearLayout
         android:id="@+id/llSubmitFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:orientation="vertical"
         android:padding="10dp"
-        android:layout_above="@+id/bPlayAgain"
         android:layout_alignParentTop="true">
     </LinearLayout>
 
-    <Button
-        android:id="@+id/bPlayAgain"
-        style="@style/button_input"
-        android:layout_alignParentLeft="true"
-        android:text="@string/playAgain"/>
+    <LinearLayout
+        android:id="@+id/llOutputActions"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true" />
 
-    <Button
-        android:id="@+id/bSubmit"
-        style="@style/button_input"
-        android:layout_alignParentRight="true"
-        android:text="@string/submit"/>
+    <!--<Button-->
+        <!--android:id="@+id/bPlayAgain"-->
+        <!--style="@style/button_input"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:text="@string/playAgain"/>-->
+
+    <!--<Button-->
+        <!--android:id="@+id/bSubmit"-->
+        <!--style="@style/button_input"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:text="@string/submit"/>-->
 
 </RelativeLayout> 
