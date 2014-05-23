@@ -13,9 +13,13 @@ import android.widget.Button;
 public class NumberOutput extends ActionBarActivity implements View.OnClickListener {
 
     private static final String TAG = "NumberOutput";
+    // Moved Bundle to class variable so we can reuse with other methods
+    Bundle bundle;
     Button bPlayAgain;
     Button bSubmit;
     MediaPlayer mpTone;
+
+    // Class variable that was populated through the Bundle located in the onCreate method.
     int largestInt;
 
     @Override
@@ -30,18 +34,15 @@ public class NumberOutput extends ActionBarActivity implements View.OnClickListe
         // I have made an integer value a required argument to launch the fragment. largestInt
         // was made into a class variable so that it may be used again to submit it to the
         // scoreboard.
-        Bundle bundle = getIntent().getExtras();
-        largestInt = bundle.getInt("largestInt");
-        attachFragment(largestInt);
-
         initialize();
+        bundle = getIntent().getExtras();
+        largestInt = bundle.getInt("largestInt");
+        attachFragment();
     }
 
-    public void attachFragment(int largestInt) {
+    public void attachFragment() {
         // We can see here than a new Bundle is created and loaded with our integer.
         // Next, similar to setExtras, we use setArguments to send the data to our fragment.
-        Bundle bundle = new Bundle();
-        bundle.putInt("largestInt", largestInt);
         FragmentResults fragmentResults = new FragmentResults();
         fragmentResults.setArguments(bundle);
         FragmentManager fragmentManager = getFragmentManager();
@@ -51,6 +52,9 @@ public class NumberOutput extends ActionBarActivity implements View.OnClickListe
     }
 
     public void initialize() {
+        bundle = new Bundle();
+        bundle.putInt("largestInt", largestInt);
+
         bPlayAgain = (Button) findViewById(R.id.bPlayAgain);
         bPlayAgain.setOnClickListener(this);
 
@@ -75,12 +79,11 @@ public class NumberOutput extends ActionBarActivity implements View.OnClickListe
                 startActivity(inputIntent);
                 break;
             case R.id.bSubmit:
-                Bundle bundle = new Bundle();
-                FragmentScoreboard fragmentScoreboard = new FragmentScoreboard();
-                fragmentScoreboard.setArguments(bundle);
+                FragmentSubmit fragmentSubmit = new FragmentSubmit();
+                fragmentSubmit.setArguments(bundle);
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction()
-                    .replace(R.id.llSubmitFragment, fragmentScoreboard)
+                    .replace(R.id.llSubmitFragment, fragmentSubmit)
                     .commit();
                 break;
         }

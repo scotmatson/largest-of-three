@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:layout_marginTop="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Your Name!"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:focusable="false"/>
+
+    <EditText
+        android:id="@+id/playerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:inputType="text"
+        android:textSize="35sp"
+        android:maxLength="15"
+        android:text="test test test"/>
+
+    <TextView
+        android:id="@+id/tvMaxInt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="150sp"
+        android:textColor="@color/White"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"/>
+
+</LinearLayout>
