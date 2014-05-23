@@ -12,6 +12,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -20,6 +21,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class NumberInput extends ActionBarActivity implements View.OnClickListener, TextWatcher {
+
+    private static final String TAG = "NumberInput";
 
     EditText etNum01;
     EditText etNum02;
@@ -107,7 +110,9 @@ public class NumberInput extends ActionBarActivity implements View.OnClickListen
                 NumberHelper numberHelper = new NumberHelper(userInput);
                 largestInt = numberHelper.getMaxNum();
                 Intent outputIntent = new Intent(NumberInput.this, NumberOutput.class);
-                outputIntent.putExtra("largestInt", largestInt);
+                Bundle bundle = new Bundle();
+                bundle.putInt("largestInt", largestInt);
+                outputIntent.putExtras(bundle);
 
                 if(etNum01.getText().length() == 1 && etNum02.getText().length() == 1 && etNum03.getText().length() == 1) {
                     mpChime.start();

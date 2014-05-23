@@ -43,6 +43,4 @@
                 android:background="@color/LightBlue"/>
         </LinearLayout>
     </ScrollView>
-
-
 </LinearLayout>
