@@ -25,7 +25,7 @@
         <item name="android:selectAllOnFocus">false</item>
     </style>
 
-    <style name="calculate_numeric_input">
+    <style name="button_input">
         <item name="android:layout_width">160dp</item>
         <item name="android:layout_height">75dp</item>
         <item name="android:textSize">23sp</item>

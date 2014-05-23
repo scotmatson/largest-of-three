@@ -45,7 +45,7 @@ public class NumberOutput extends ActionBarActivity implements View.OnClickListe
     public void onClick(View v) {
         switch(v.getId()) {
             case R.id.bPlayAgain:
-                Intent inputIntent = new Intent("com.scotmatson.NUMBERINPUT");
+                Intent inputIntent = new Intent("com.scotmatson.largestofthree.NUMBERINPUT");
                 mpTone.start();
                 try {
                     Thread.sleep(50);

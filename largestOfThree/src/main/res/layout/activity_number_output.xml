@@ -38,12 +38,15 @@
     </LinearLayout>
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:text="@string/playAgain"
         android:id="@+id/bPlayAgain"
-        android:textSize="23sp"
-        android:layout_alignParentBottom="true"
-        android:background="#cc222222"/>
+        style="@style/button_input"
+        android:layout_alignParentLeft="true"
+        android:text="@string/playAgain"/>
+
+    <Button
+        android:id="@+id/bSubmit"
+        style="@style/button_input"
+        android:layout_alignParentRight="true"
+        android:text="@string/submit"/>
 
 </RelativeLayout> 

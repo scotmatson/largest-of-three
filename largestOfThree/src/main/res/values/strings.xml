@@ -15,5 +15,6 @@
 
     <string name="play">Play Fragment</string>
     <string name="scoreboard">Scoreboard Fragment</string>
+    <string name="submit">Submit</string>
 
 </resources>

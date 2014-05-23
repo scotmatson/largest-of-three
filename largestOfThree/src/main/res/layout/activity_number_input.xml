@@ -54,12 +54,12 @@
         android:text="@string/randomize"
         android:id="@+id/bRandomize"
         android:layout_alignParentLeft="true"
-        style="@style/calculate_numeric_input"/>
+        style="@style/button_input"/>
 
     <Button
         android:text="@string/clearValues"
         android:id="@+id/bClearValues"
         android:layout_alignParentRight="true"
-        style="@style/calculate_numeric_input"/>
+        style="@style/button_input"/>
 
 </RelativeLayout>
