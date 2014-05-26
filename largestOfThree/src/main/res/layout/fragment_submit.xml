@@ -27,7 +27,7 @@
         android:inputType="text"
         android:textSize="35sp"
         android:maxLength="15"
-        android:text="test test test"/>
+        android:hint="Player 01"/>
 
     <TextView
         android:id="@+id/tvMaxInt"
@@ -37,5 +37,11 @@
         android:textColor="@color/White"
         android:layout_gravity="center_horizontal"
         android:layout_margin="10dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/bSaveAndReplay"
+        style="@style/button_input"
+        android:text="@string/submit"/>
 
 </LinearLayout>

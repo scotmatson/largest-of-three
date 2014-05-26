@@ -60,14 +60,13 @@ public class FragmentButtonOutput extends Fragment implements View.OnClickListen
 
             case R.id.bSubmit:
                 FragmentSubmit fragmentSubmit = new FragmentSubmit();
-                FragmentCommitResults fragmentCommitResults = new FragmentCommitResults();
 
                 fragmentSubmit.setArguments(bundle);
 
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction()
                         .replace(R.id.llSubmitFragment, fragmentSubmit)
-                        .replace(R.id.llOutputActions, fragmentCommitResults)
+                        .remove(this)
                         .commit();
                 break;
         }

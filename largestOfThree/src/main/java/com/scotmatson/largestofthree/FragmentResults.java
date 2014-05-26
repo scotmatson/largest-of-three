@@ -2,7 +2,6 @@ package com.scotmatson.largestofthree;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +26,7 @@ public class FragmentResults extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
         tvMaxInt = (TextView) getView().findViewById(R.id.tvMaxInt);
         Bundle bundle = this.getArguments();
         int largestInt = bundle.getInt("largestInt");
