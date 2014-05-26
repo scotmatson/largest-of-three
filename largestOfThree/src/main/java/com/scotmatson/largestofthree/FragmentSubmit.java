@@ -1,6 +1,8 @@
 package com.scotmatson.largestofthree;
 
 import android.app.Fragment;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,14 +10,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class FragmentSubmit extends Fragment {
 
-    TextView tvMaxInt;
-    Button bSaveAndReplay;
-    EditText saveNameAndInt;
-    //String myText;
+    Button bSaveAndGoToMenu;
+    EditText etPlayerName;
+    public static final String HIGHSCORES = "player_scores";
+    SharedPreferences savedScores;
+    TextView tvPlayerInt;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -27,25 +29,32 @@ public class FragmentSubmit extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        // Acessess the TextView and populates it with the bundled largest integer
-        tvMaxInt = (TextView) getView().findViewById(R.id.tvMaxInt);
+        etPlayerName = (EditText) getView().findViewById(R.id.playerName);
+
+        // Access the TextView and populates it with the bundled largest integer
+        tvPlayerInt = (TextView) getView().findViewById(R.id.tvMaxInt);
         Bundle bundle = this.getArguments();
         int largestInt = bundle.getInt("largestInt");
-        tvMaxInt.setText(String.valueOf(largestInt));
+        tvPlayerInt.setText(String.valueOf(largestInt));
 
-        bSaveAndReplay = (Button) getView().findViewById(R.id.bSaveAndReplay);
-        saveNameAndInt = (EditText) getView().findViewById(R.id.playerName);
+        savedScores = getActivity().getSharedPreferences(HIGHSCORES, 0);
 
-        bSaveAndReplay.setOnClickListener(new View.OnClickListener() {
+        bSaveAndGoToMenu = (Button) getView().findViewById(R.id.bSaveAndReplay);
+        bSaveAndGoToMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String myText = saveNameAndInt.getText().toString();
+                // Collecting name and integer values
+                String playerName = etPlayerName.getText().toString();
+                int playerScore = Integer.valueOf(tvPlayerInt.getText().toString());
 
-                Toast toast = Toast.makeText(getActivity(), myText, Toast.LENGTH_SHORT);
-                toast.show();
+                // Saving name and integer values
+                SharedPreferences.Editor editor = savedScores.edit();
+                editor.putString("playerName", playerName);
+                editor.putInt("playerScore", playerScore);
+                editor.commit();
 
-                //Intent intent = new Intent("com.scotmatson.largestofthree.MENU");
-                //startActivity(intent);
+                Intent intent = new Intent("com.scotmatson.largestofthree.MENU");
+                startActivity(intent);
             }
         });
     }
